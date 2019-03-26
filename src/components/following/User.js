@@ -3,7 +3,7 @@ import React from "react";
 const User = props => {
   var { user, youAreFollowing, isFollowingYou } = props.user;
 
-  var followOrUnfollow = youAreFollowing ? "ja" : "nee";
+  var followOrUnfollow = youAreFollowing ? "yes" : "no";
   var followsYou = isFollowingYou ? "is following you" : "";
 
   return (

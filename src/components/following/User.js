@@ -13,7 +13,7 @@ class User extends React.Component {
     var followsYou = isFollowingYou ? "follows you" : "";
 
     return (
-      <div>
+      <div className="listitem">
         {user}
         <FollowOrUnfollow
           youAreFollowing={youAreFollowing}

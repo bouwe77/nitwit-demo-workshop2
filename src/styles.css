@@ -22,11 +22,11 @@ body {
   padding-left: 10px;
 }
 
-.timeline {
+.listitems {
   width: 420px;
 }
 
-.post {
+.listitem {
   width: 400px;
   background: #ffffff;
   padding: 10px;
@@ -34,12 +34,12 @@ body {
   border-radius: 5px;
 }
 
-.post h1 {
+.listitem h1 {
   color: #273746;
   font-size: 12pt;
 }
 
-.post p {
+.listitem p {
   color: #808b96;
   font-style: normal;
 }

@@ -4,7 +4,7 @@ import Post from "./Post";
 
 const Timeline = props => {
   return (
-    <div className="timeline">
+    <div className="listitems">
       {props.timeline.map((post, index) => (
         <Post key={index} post={post} />
       ))}

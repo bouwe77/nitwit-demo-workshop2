@@ -41,8 +41,17 @@ body {
 }
 
 .listitem p {
-  color: #808b96;
+  color: #273746;
   font-style: normal;
+}
+
+.post-username {
+  float: left;
+}
+
+.post-timestamp {
+  float: right;
+  color: #808b96;
 }
 
 .following-username {

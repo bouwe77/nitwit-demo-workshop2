@@ -5,8 +5,13 @@ import DateTime from "./DateTime";
 const Post = props => {
   return (
     <div className="listitem">
-      <h1>{props.post.user}</h1>
-      <DateTime timestamp={props.post.timestamp} />
+      <span className="post-username">
+        <h1>{props.post.user}</h1>
+      </span>
+      <span className="post-timestamp">
+        <DateTime timestamp={props.post.created} />
+      </span>
+      <br />
       <p>{props.post.post}</p>
     </div>
   );

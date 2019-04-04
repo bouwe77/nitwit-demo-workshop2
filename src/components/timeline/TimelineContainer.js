@@ -16,13 +16,14 @@ class TimelineContainer extends React.Component {
       timeline: [
         {
           user: "bouwe",
-          post: "nitwit aan het uitvogelen :)",
-          timestamp: new Date()
+          post:
+            "nitwit aan het uitvogelen :) Lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum",
+          created: "2019-04-03T17:00:00"
         },
         {
           user: "henk",
           post: "Hallo Wereld, ik ben Henk",
-          timestamp: new Date()
+          created: "2019-04-02T15:14:57.8425465"
         }
       ]
     };

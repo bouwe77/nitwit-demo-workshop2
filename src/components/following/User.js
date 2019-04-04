@@ -14,12 +14,14 @@ class User extends React.Component {
 
     return (
       <div className="listitem">
-        {user}
-        <FollowOrUnfollow
-          youAreFollowing={youAreFollowing}
-          toggleFollowing={this.toggleFollowing}
-        />
-        <i>{followsYou}</i>
+        <div className="following-item">
+          {user}
+          <FollowOrUnfollow
+            youAreFollowing={youAreFollowing}
+            toggleFollowing={this.toggleFollowing}
+          />
+          <i>{followsYou}</i>
+        </div>
       </div>
     );
   };

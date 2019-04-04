@@ -6,7 +6,7 @@ const Post = props => {
   return (
     <div className="listitem">
       <h1>{props.post.user}</h1>
-      <DateTime />
+      <DateTime timestamp={props.post.timestamp} />
       <p>{props.post.post}</p>
     </div>
   );

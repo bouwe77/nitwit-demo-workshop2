@@ -1,5 +1,9 @@
 import React from "react";
 
-const DateTime = props => <div>3 seconds ago</div>;
+import timeSince from "../../functions/timeSince";
+
+const DateTime = props => (
+  <React.Fragment>{timeSince(props.timestamp)} ago</React.Fragment>
+);
 
 export default DateTime;

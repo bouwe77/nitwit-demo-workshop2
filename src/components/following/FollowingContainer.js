@@ -13,12 +13,25 @@ class FollowingContainer extends React.Component {
 
     this.state = {
       isLoaded: false,
-      users: []
+      users: [
+        { user: "piet", youAreFollowing: true, isFollowingYou: true },
+        {
+          user: "miepertje miep",
+          youAreFollowing: true,
+          isFollowingYou: false
+        },
+        {
+          user: "ruftert de knuftert",
+          youAreFollowing: false,
+          isFollowingYou: true
+        },
+        { user: "met je hoofd", youAreFollowing: false, isFollowingYou: false }
+      ]
     };
   }
 
   componentDidMount = () => {
-    this.getUsers();
+    //this.getUsers();
   };
 
   getUsers = () => {
@@ -33,10 +46,28 @@ class FollowingContainer extends React.Component {
       });
   };
 
+  toggleFollowing = username => {
+    const users = this.state.users.map(user => {
+      if (user.user === username) {
+        return {
+          ...user,
+          youAreFollowing: !user.youAreFollowing
+        };
+      }
+      return user;
+    });
+    this.setState({ users });
+
+    //TODO API call...
+  };
+
   render() {
     return (
       <div>
-        <Following users={this.state.users} />
+        <Following
+          users={this.state.users}
+          toggleFollowing={this.toggleFollowing}
+        />
       </div>
     );
   }

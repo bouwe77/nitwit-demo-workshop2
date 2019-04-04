@@ -29,8 +29,10 @@ class Compose extends React.Component {
               placeholder="Write something..."
             />
           </div>
-          <div className="form-button">
-            <button type="submit">OK</button>
+          <div className="button-post-container">
+            <button className="button-post" type="submit">
+              OK
+            </button>
           </div>
         </form>
       </div>

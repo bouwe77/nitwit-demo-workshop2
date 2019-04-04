@@ -13,12 +13,18 @@ class TimelineContainer extends React.Component {
 
     this.state = {
       isLoaded: false,
-      timeline: []
+      timeline: [
+        { user: "bouwe", post: "nitwit aan het uitvogelen :)" },
+        { user: "henk", post: "Hallo Wereld" }
+      ]
     };
   }
 
   componentDidMount = () => {
-    this.getTimeline();
+    //this.getTimeline();
+
+    //todo Deze regel kan weg als de API het weer doet
+    this.setState({ isLoaded: true });
   };
 
   getTimeline = () => {

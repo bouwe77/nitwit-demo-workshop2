@@ -1,16 +1,28 @@
 import React from "react";
 
-const User = props => {
-  var { user, youAreFollowing, isFollowingYou } = props.user;
+import FollowOrUnfollow from "./FollowOrUnfollow";
 
-  var followOrUnfollow = youAreFollowing ? "yes" : "no";
-  var followsYou = isFollowingYou ? "is following you" : "";
+class User extends React.Component {
+  toggleFollowing = () => {
+    this.props.toggleFollowing(this.props.user.user);
+  };
 
-  return (
-    <div>
-      {user} {followOrUnfollow} <i>{followsYou}</i>
-    </div>
-  );
-};
+  render = () => {
+    var { user, youAreFollowing, isFollowingYou } = this.props.user;
+
+    var followsYou = isFollowingYou ? "follows you" : "";
+
+    return (
+      <div>
+        {user}
+        <FollowOrUnfollow
+          youAreFollowing={youAreFollowing}
+          toggleFollowing={this.toggleFollowing}
+        />
+        <i>{followsYou}</i>
+      </div>
+    );
+  };
+}
 
 export default User;

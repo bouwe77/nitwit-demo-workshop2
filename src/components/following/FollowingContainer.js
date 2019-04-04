@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-import Following from "./Following";
+import UserList from "./UserList";
 
 class FollowingContainer extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class FollowingContainer extends React.Component {
   render() {
     return (
       <div>
-        <Following
+        <UserList
           users={this.state.users}
           toggleFollowing={this.toggleFollowing}
         />

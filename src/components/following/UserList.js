@@ -2,7 +2,7 @@ import React from "react";
 
 import User from "./User";
 
-const Following = props => {
+const UserList = props => {
   return (
     <div>
       {props.users.map(user => (
@@ -16,4 +16,4 @@ const Following = props => {
   );
 };
 
-export default Following;
+export default UserList;

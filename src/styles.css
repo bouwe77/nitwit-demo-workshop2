@@ -28,6 +28,7 @@ body {
 
 .listitem {
   width: 400px;
+  min-height: 15px;
   background: #ffffff;
   padding: 10px;
   margin-bottom: 5px;
@@ -44,8 +45,17 @@ body {
   font-style: normal;
 }
 
-.following-item {
-  color: Red;
+.following-username {
+  float: left;
+  color: #273746;
+}
+
+.following-username i {
+  color: #808b96;
+}
+
+.following-buttons {
+  float: right;
 }
 
 .compose {

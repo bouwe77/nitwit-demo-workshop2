@@ -14,7 +14,10 @@ class TimelineContainer extends React.Component {
     this.state = {
       isLoaded: false,
       timeline: [
-        { user: "bouwe", post: "nitwit aan het uitvogelen :)" },
+        {
+          user: "bouwe",
+          post: "nitwit aan het uitvogelen :)"
+        },
         { user: "henk", post: "Hallo Wereld" }
       ]
     };

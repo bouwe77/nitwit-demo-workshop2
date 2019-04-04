@@ -7,9 +7,7 @@ class FollowingContainer extends React.Component {
   constructor(props) {
     super(props);
     this.user = "bouwe";
-    this.baseUrl = `https://nitwit-api.azurewebsites.net/users?user=${
-      this.user
-    }`;
+    this.usersUrl = "https://nitwit-api.azurewebsites.net/users";
 
     this.state = {
       isLoaded: false,
@@ -35,6 +33,7 @@ class FollowingContainer extends React.Component {
   };
 
   getUsers = () => {
+    const url = `${this.usersUrl}?user=${this.user}`;
     axios
       .get(`${this.baseUrl}`)
       .then(res => {
@@ -47,6 +46,14 @@ class FollowingContainer extends React.Component {
   };
 
   toggleFollowing = username => {
+    //TODO as soon as this works: refactor!!!
+
+    const previousUsers = this.state.users;
+
+    const foundUser = this.state.users.find(function(u) {
+      return u.user === username;
+    });
+
     const users = this.state.users.map(user => {
       if (user.user === username) {
         return {
@@ -58,7 +65,22 @@ class FollowingContainer extends React.Component {
     });
     this.setState({ users });
 
-    //TODO API call...
+    //TODO Let op, deze return verwijderen zodra API weer in de lucht is
+    return;
+
+    const unfollow = foundUser.youAreFollowing;
+    if (unfollow) {
+      const url = `${this.usersUrl}/${this.user}/following/${username}`;
+      axios.delete(url).catch(error => {
+        this.setState({ users: previousUsers, error });
+      });
+    } else {
+      const data = { user: username };
+      const url = `${this.usersUrl}/${this.user}/following`;
+      axios.post(url, data).catch(error => {
+        this.setState({ todos: previousUsers, error });
+      });
+    }
   };
 
   render() {

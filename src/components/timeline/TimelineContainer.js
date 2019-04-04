@@ -50,11 +50,18 @@ class TimelineContainer extends React.Component {
 
   savePost = content => {
     const previousTimeline = this.state.timeline;
-    const newPost = { post: content, user: this.user };
+    const newPost = {
+      post: content,
+      user: this.user,
+      created: new Date().toString()
+    };
 
     this.setState(prevState => ({
       timeline: [newPost, ...prevState.timeline]
     }));
+
+    //TODO Let op, deze return verwijderen zodra API weer in de lucht is
+    return;
 
     axios.post(`${this.baseUrl}/posts`, newPost).catch(error => {
       this.setState({ timeline: previousTimeline, error });

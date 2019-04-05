@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Header
           renderTimeline={this.renderTimeline}
           renderFollowing={this.renderFollowing}

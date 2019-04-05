@@ -13,22 +13,26 @@ export default class Header extends React.Component {
 
   render = () => {
     return (
-      <div>
-        <a href="">
-          <img src="nitwit-logo.png" alt="nitwit" className="logo" />
-        </a>
-        <ul className="nav">
-          <li>
-            <a href="#" onClick={this.timelineClick}>
-              timeline
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={this.followingClick}>
-              following
-            </a>
-          </li>
-        </ul>
+      <div className="header">
+        <div className="logo">
+          <a href="">
+            <img src="nitwit-logo.png" alt="nitwit" className="img-logo" />
+          </a>
+        </div>
+        <div className="header-nav">
+          <ul className="nav">
+            <li>
+              <a href="#" onClick={this.timelineClick}>
+                timeline
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={this.followingClick}>
+                following
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   };

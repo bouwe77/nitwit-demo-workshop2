@@ -132,3 +132,12 @@ textarea {
   display: inline;
   padding: 8px;
 }
+
+.nav a {
+  color: #01d8ff;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}

@@ -22,7 +22,7 @@ export default class Header extends React.Component {
         <div className="header-nav">
           <ul className="nav">
             <li>
-              <a href="#" onClick={this.timelineClick}>
+              <a className="selected" href="#" onClick={this.timelineClick}>
                 timeline
               </a>
             </li>

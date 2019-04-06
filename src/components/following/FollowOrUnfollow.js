@@ -7,7 +7,16 @@ export default class FollowOrUnfollow extends React.Component {
 
   getButton = text => <button onClick={this.handleClick}>{text}</button>;
 
-  Follow = () => this.getButton("Follow");
+  moio = () => (
+    <label class="switch">
+      <input type="checkbox" id="togBtn" />
+      <div class="slider round">
+        <span class="on">ON</span>
+        <span class="off">OFF</span>
+      </div>
+    </label>
+  );
+  Follow = () => this.moio();
   Unfollow = () => this.getButton("Unfollow");
 
   render = () => {

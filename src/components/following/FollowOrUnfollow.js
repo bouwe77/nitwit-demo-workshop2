@@ -1,23 +1,22 @@
 import React from "react";
 
 export default class FollowOrUnfollow extends React.Component {
-  handleClick = () => {
+  handleToggle = () => {
     this.props.toggleFollowing();
   };
 
-  getButton = text => <button onClick={this.handleClick}>{text}</button>;
-
-  moio = () => (
+  getToggle = checked => (
     <label class="switch">
-      <input type="checkbox" id="togBtn" />
+      <input type="checkbox" checked={checked} onChange={this.handleToggle} />
       <div class="slider round">
-        <span class="on">ON</span>
-        <span class="off">OFF</span>
+        <span class="on">Following</span>
+        <span class="off">Follow?</span>
       </div>
     </label>
   );
-  Follow = () => this.moio();
-  Unfollow = () => this.getButton("Unfollow");
+
+  Follow = () => this.getToggle(false);
+  Unfollow = () => this.getToggle(true);
 
   render = () => {
     const Button = this.props.youAreFollowing ? this.Unfollow : this.Follow;

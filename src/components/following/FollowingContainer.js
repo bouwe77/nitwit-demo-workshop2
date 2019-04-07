@@ -63,6 +63,7 @@ class FollowingContainer extends React.Component {
       }
       return user;
     });
+
     this.setState({ users });
 
     //TODO Let op, deze return verwijderen zodra API weer in de lucht is

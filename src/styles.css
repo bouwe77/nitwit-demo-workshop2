@@ -82,6 +82,7 @@ body {
 
 .following-buttons {
   float: right;
+  margin-top: -4px; /* dit is een dirty hack */
 }
 
 .compose {

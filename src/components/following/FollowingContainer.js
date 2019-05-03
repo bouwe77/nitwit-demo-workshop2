@@ -6,7 +6,7 @@ import UserList from "./UserList";
 class FollowingContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.user = "bouwe";
+    this.user = this.props.user;
     this.usersUrl = "https://nitwit-api.azurewebsites.net/users";
 
     this.state = {

@@ -7,7 +7,8 @@ import FollowingContainer from "./following/FollowingContainer";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { renderFollowing: true };
+    this.user = "bouwe";
+    this.state = { renderFollowing: false };
   }
 
   renderTimeline = () => {
@@ -27,9 +28,9 @@ export default class App extends React.Component {
         />
 
         {this.state.renderFollowing ? (
-          <FollowingContainer />
+          <FollowingContainer user={this.user} />
         ) : (
-          <TimelineContainer />
+          <TimelineContainer user={this.user} />
         )}
       </div>
     );

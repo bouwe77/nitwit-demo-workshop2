@@ -8,7 +8,7 @@ class TimelineContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.user = "bouwe";
+    this.user = this.props.user;
     this.baseUrl = `https://nitwit-api.azurewebsites.net/users/${this.user}`;
 
     this.state = {

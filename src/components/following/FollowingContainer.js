@@ -11,31 +11,18 @@ class FollowingContainer extends React.Component {
 
     this.state = {
       isLoaded: false,
-      users: [
-        { user: "piet", youAreFollowing: true, isFollowingYou: true },
-        {
-          user: "miepertje miep",
-          youAreFollowing: true,
-          isFollowingYou: false
-        },
-        {
-          user: "ruftert de knuftert",
-          youAreFollowing: false,
-          isFollowingYou: true
-        },
-        { user: "met je hoofd", youAreFollowing: false, isFollowingYou: false }
-      ]
+      users: []
     };
   }
 
   componentDidMount = () => {
-    //this.getUsers();
+    this.getUsers();
   };
 
   getUsers = () => {
     const url = `${this.usersUrl}?user=${this.user}`;
     axios
-      .get(`${this.baseUrl}`)
+      .get(url)
       .then(res => {
         const users = res.data;
         this.setState({ isLoaded: true, users });
@@ -65,9 +52,6 @@ class FollowingContainer extends React.Component {
     });
 
     this.setState({ users });
-
-    //TODO Let op, deze return verwijderen zodra API weer in de lucht is
-    return;
 
     const unfollow = foundUser.youAreFollowing;
     if (unfollow) {

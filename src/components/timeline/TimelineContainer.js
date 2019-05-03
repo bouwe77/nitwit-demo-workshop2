@@ -13,27 +13,12 @@ class TimelineContainer extends React.Component {
 
     this.state = {
       isLoaded: false,
-      timeline: [
-        {
-          user: "bouwe",
-          post:
-            "nitwit aan het uitvogelen :) Lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum",
-          created: "2019-04-03T17:00:00"
-        },
-        {
-          user: "henk",
-          post: "Hallo Wereld, ik ben Henk",
-          created: "2019-04-02T15:14:57.8425465"
-        }
-      ]
+      timeline: []
     };
   }
 
   componentDidMount = () => {
-    //this.getTimeline();
-
-    //todo Deze regel kan weg als de API het weer doet
-    this.setState({ isLoaded: true });
+    this.getTimeline();
   };
 
   getTimeline = () => {
@@ -59,9 +44,6 @@ class TimelineContainer extends React.Component {
     this.setState(prevState => ({
       timeline: [newPost, ...prevState.timeline]
     }));
-
-    //TODO Let op, deze return verwijderen zodra API weer in de lucht is
-    return;
 
     axios.post(`${this.baseUrl}/posts`, newPost).catch(error => {
       this.setState({ timeline: previousTimeline, error });

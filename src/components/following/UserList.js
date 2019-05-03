@@ -7,7 +7,7 @@ const UserList = props => {
     <div className="listitems">
       {props.users.map(user => (
         <User
-          key={user.name}
+          key={user.user}
           user={user}
           toggleFollowing={props.toggleFollowing}
         />

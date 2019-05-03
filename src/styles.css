@@ -4,6 +4,7 @@
 }
 
 body {
+  margin: 10px;
   background-color: #eaecee;
 }
 
@@ -33,6 +34,7 @@ body {
 }
 
 .header-nav {
+  margin-top: 10px;
   float: right;
 }
 

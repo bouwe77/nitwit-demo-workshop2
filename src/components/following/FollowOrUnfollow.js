@@ -6,11 +6,11 @@ export default class FollowOrUnfollow extends React.Component {
   };
 
   getToggle = checked => (
-    <label class="switch">
+    <label className="switch">
       <input type="checkbox" checked={checked} onChange={this.handleToggle} />
-      <div class="slider round">
-        <span class="on">Following</span>
-        <span class="off">Follow?</span>
+      <div className="slider round">
+        <span className="on">Following</span>
+        <span className="off">Follow?</span>
       </div>
     </label>
   );

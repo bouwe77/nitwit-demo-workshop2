@@ -22,10 +22,8 @@ class TimelineContainer extends React.Component {
   };
 
   getTimeline = () => {
-    const url = `${this.baseUrl}/timeline`;
-    console.log(url);
     axios
-      .get(url)
+      .get(`${this.baseUrl}/timeline`)
       .then(res => {
         const timeline = res.data;
         this.setState({ isLoaded: true, timeline });
@@ -37,17 +35,17 @@ class TimelineContainer extends React.Component {
 
   savePost = content => {
     const previousTimeline = this.state.timeline;
-    const newPost = {
-      post: content,
-      user: this.user,
-      created: new Date().toString()
-    };
 
+    // Update local state
+    const newPost = { post: content, user: this.user };
     this.setState(prevState => ({
       timeline: [newPost, ...prevState.timeline]
     }));
 
-    axios.post(`${this.baseUrl}/posts`, newPost).catch(error => {
+    // Send post to the API
+    const post = { post: content };
+    axios.post(`${this.baseUrl}/posts`, post).catch(error => {
+      console.log(error, error.response, error.request, error.config);
       this.setState({ timeline: previousTimeline, error });
     });
   };

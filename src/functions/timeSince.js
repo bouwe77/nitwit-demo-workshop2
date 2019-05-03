@@ -1,4 +1,5 @@
 const timeSince = function(date) {
+  if (!date) return "Just now";
   if (typeof date !== "object") {
     date = new Date(date);
   }

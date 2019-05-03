@@ -1,5 +1,7 @@
 const timeSince = function(date) {
+  // Hackety hack: No date means the date has not yet been determined by the server...
   if (!date) return "Just now";
+
   if (typeof date !== "object") {
     date = new Date(date);
   }

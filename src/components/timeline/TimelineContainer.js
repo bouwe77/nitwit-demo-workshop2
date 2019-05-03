@@ -22,8 +22,10 @@ class TimelineContainer extends React.Component {
   };
 
   getTimeline = () => {
+    const url = `${this.baseUrl}/timeline`;
+    console.log(url);
     axios
-      .get(`${this.baseUrl}/timeline`)
+      .get(url)
       .then(res => {
         const timeline = res.data;
         this.setState({ isLoaded: true, timeline });

@@ -7,7 +7,7 @@ import FollowingContainer from "./following/FollowingContainer";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { renderFollowing: true };
+    this.state = { renderFollowing: false };
   }
 
   renderTimeline = () => {

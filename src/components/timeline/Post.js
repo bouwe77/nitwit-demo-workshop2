@@ -12,7 +12,7 @@ const Post = props => {
         <DateTime timestamp={props.post.created} />
       </span>
       <br />
-      <p>{props.post.post}</p>
+      <p>{props.post.content}</p>
     </div>
   );
 };

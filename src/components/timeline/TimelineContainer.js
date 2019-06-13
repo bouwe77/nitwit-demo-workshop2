@@ -37,13 +37,13 @@ class TimelineContainer extends React.Component {
     const previousTimeline = this.state.timeline;
 
     // Update local state
-    const newPost = { post: content, user: this.user };
+    const newPost = { content, user: this.user };
     this.setState(prevState => ({
       timeline: [newPost, ...prevState.timeline]
     }));
 
     // Send post to the API
-    const post = { post: content };
+    const post = { content };
     axios.post(`${this.baseUrl}/posts`, post).catch(error => {
       console.log(error, error.response, error.request, error.config);
       this.setState({ timeline: previousTimeline, error });

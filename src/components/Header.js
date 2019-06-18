@@ -16,7 +16,11 @@ export default class Header extends React.Component {
       <div className="header">
         <div className="logo">
           <a href="">
-            <img src="/nitwit-logo.png" alt="nitwit" className="img-logo" />
+            <img
+              src="https://fontmeme.com/permalink/190618/9e3030abcf79d598d68c87c766e2f03c.png"
+              alt="nitwit"
+              className="img-logo"
+            />
           </a>
         </div>
         <div className="header-nav">
